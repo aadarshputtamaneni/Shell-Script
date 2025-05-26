@@ -1,5 +1,6 @@
 #!/bin/bash
-read -p "enter string:" input
-vowel_count=$(echo "$input" | grep -o -i "[aeiou]" | wc -l)
+echo "Enter your string:"
+read COUNT
+vowel_count=$( echo $COUNT | grep -i -o "[aeiou]" | wc -l)
 
-echo "number of vowels in give string:$vowel_count"
+echo "number of vowels in given string:$vowel_count"
