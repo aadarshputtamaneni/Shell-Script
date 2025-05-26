@@ -1,7 +1,7 @@
 
-FILE=/tmp/sample.txt
+FILE=/tmp/demo/sample.txt
 
-if [ -f $FILE ]
+if [ -demo $FILE ]
 then 
     echo "already $FILE exits"
 else
