@@ -4,6 +4,7 @@ FILE=/tmp/demo/sample.txt
 if [ -f $FILE ]
 then 
     echo "already $FILE exits"
+    exit 1
 else
     echo "make sure $FILE exits"
 fi
