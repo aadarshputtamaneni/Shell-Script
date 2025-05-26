@@ -1,12 +1,11 @@
 
 FILE=/tmp/sample.txt
 
-if [ -d $FILE ]
+if [ -f $FILE ]
 then
     echo "already $FILE exits"
 else
     echo "make sure $FILE exits"
-    exit 1
 fi
 
 while IFS= read -r line
