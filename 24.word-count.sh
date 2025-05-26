@@ -8,3 +8,7 @@ else
     echo "make sure $FILE exits"
 fi
 
+while IFS= read -r line
+do
+RESU=$(echo $line )
+done <<< $FILE
