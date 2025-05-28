@@ -7,6 +7,7 @@ N="\e[0m"
 if [ -z $SERVICE_NAME ]
 then
     echo -e "$R $SERVICE_NAME is not active $N"
+    yum install nginx -y
     systemctl start $SERVICE_NAME
 else
     echo -e "$G $SERVICE_NAME is active $N"
