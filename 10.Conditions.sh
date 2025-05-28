@@ -17,3 +17,11 @@ else
     echo "The $NUMBER is less than 50"
 fi
 
+:'
+=	Equal (strings)	
+!=	Not equal (strings)	
+-eq	Equal (numbers)	
+-ne	Not equal (numbers)	
+-gt	Greater than (numbers)
+-lt	Less than (numbers)	
+'
