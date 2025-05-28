@@ -1,9 +1,10 @@
-
 #!/bin/bash
-service="nginx"
-if ! systemctl is-active --quiet $service; then #--quiet to check success/failure
- echo "$service is down, restarting..."
- systemctl start $service
+SERVICE_NAME="nginx"
+
+if [ "$(systemctl is-active $SERVICE_NAME)" != "active" ]
+then
+    echo "$SERVICE_NAME is not active,restaring"
+    systemctl restart $SERVICE_NAME 
 else
- echo "$service is running."
+    echo "$SERVICE_NAME is not active"
 fi
