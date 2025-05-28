@@ -11,5 +11,5 @@ then
     echo -e "$R $service is down, restarting...$N"
     systemctl start $service
 else
-    echo "$G $service is running. $N"
+    echo -e "$G $service is running. $N"
 fi
