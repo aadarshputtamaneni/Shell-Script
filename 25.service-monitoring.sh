@@ -1,11 +1,14 @@
 #!/bin/bash
 SERVICE_NAME="nginx"
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 if [ "$(systemctl is-active $SERVICE_NAME)" = "active" ]
 then
-    echo "$SERVICE_NAME is not active,restaring"
-    exit 1
+    echo -e "$R $SERVICE_NAME is not active $N ..$G restaring $N"
     systemctl restart $SERVICE_NAME 
 else
-    echo "$SERVICE_NAME is not active"
+    echo -e "$G $SERVICE_NAME is active $N"
 fi
