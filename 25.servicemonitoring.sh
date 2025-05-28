@@ -1,15 +1,13 @@
 #!/bin/bash
-
-service="nginx"
-
+SERVICE_NAME="nginx"
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-if [ $service -ne 0 ]
+if [ -z $SERVICE_NAME ]
 then
-    echo -e "$R $service is down, restarting...$N"
-    systemctl start $service
+    echo -e "$R $SERVICE_NAME is not active $N"
+    systemctl start $SERVICE_NAME
 else
-    echo -e "$G $service is running. $N"
+    echo -e "$G $SERVICE_NAME is active $N"
 fi
