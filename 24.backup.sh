@@ -5,14 +5,17 @@ BACKUP_DESTINATION="/backups"
 BACKUP_DATE=$(date +%Y+%m+%d+%H+%M+%S)
 BACKUP_FILENAME="backup_$BACKUP_DATE.tar.gz"
 mkdir -p "$BACKUP_DESTINATION/$BACKUP_DATE"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
-tar -czf "$BACKUP_DESTINATION/$BACKUP_DATE/$BACKUP_FILENAME" -C "$BACKUP_SOURCE"
+tar -czf "$BACKUP_DESTINATION/$BACKUP_DATE/$BACKUP_FILENAME" "$BACKUP_SOURCE"
 
 if [ $? -eq 0 ]
 then
-    echo "backup successful:$BACKUP_FILENAME"
+    echo -e "$G backup successful:$BACKUP_FILENAME $N"
 else
-    echo "backup failed"
+    echo -e  "$R backup failed $N"
 fi
 
 
