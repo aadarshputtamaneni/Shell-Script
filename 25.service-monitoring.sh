@@ -7,7 +7,7 @@ N="\e[0m"
 
 if [ "$(systemctl is-active $SERVICE_NAME)" != "active" ]
 then
-    echo -e "$R $SERVICE_NAME Is Not Active $N ..$G Restaring $N"
+    echo -e "$R $SERVICE_NAME Is Not Active $N ..$G Restarting $N"
     systemctl restart $SERVICE_NAME 
 else
     echo -e "$G $SERVICE_NAME is Active $N"
