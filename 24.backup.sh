@@ -9,7 +9,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-tar -czf "$BACKUP_DESTINATION/$BACKUP_DATE/$BACKUP_FILENAME" "$BACKUP_SOURCE"
+tar -czf "$BACKUP_DESTINATION/$BACKUP_DATE/$BACKUP_FILENAME"  -c "$BACKUP_SOURCE"
 
 if [ $? -eq 0 ]
 then
