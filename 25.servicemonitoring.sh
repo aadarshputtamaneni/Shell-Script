@@ -9,7 +9,7 @@ N="\e[0m"
 if [ ! systemctl is-active --quite $service ]
 then
     echo -e "$R $service is down, restarting...$N"
-    systemctl start $service
+    exit 1
 else
     echo -e "$G $service is running. $N"
 fi
