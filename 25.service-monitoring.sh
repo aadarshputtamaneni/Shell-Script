@@ -1,6 +1,6 @@
 
 #!/bin/bash
-service="apache2"
+service="nginx"
 if ! systemctl is-active --quiet $service; then #--quiet to check success/failure
  echo "$service is down, restarting..."
  systemctl start $service
