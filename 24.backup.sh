@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_SOURCE="/tmp/"
+BACKUP_SOURCE="/tmp"
 BACKUP_DESTINATION="/backups"
 BACKUP_DATE=$(date +%Y+%m+%d+%H+%M+%S)
 BACKUP_FILENAME="backup_$BACKUP_DATE.tar.gz"
@@ -14,8 +14,6 @@ then
 else
     echo "backup failed"
 fi
-
-
 
 
 : '
