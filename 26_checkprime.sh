@@ -1,22 +1,25 @@
-#!/bin/bash
+ #!/bin/bash
 
-echo "enter your number"
-read SOURCE
+# Ask the user to enter a number
+echo "Enter a number:"
+read num
 
-if [ $SOURCE -le 1 ]
-then
-    echo "your number is $SOURCE not prime"
-    exit 1
- fi
- # Start checking from 2 to number-1
-for (( i=2; i<$SOURCE; i++ ))
+# Check if the number is less than or equal to 1
+if [ $num -le 1 ]; then
+  echo "$num is not a prime number"
+  exit 1
+fi
+
+# Loop from 2 to num-1
+for (( i=2; i<$num; i++ ))
 do
-    # If number is divisible by i, it's not prime
-    if [ $SOURCE % i == 0 ]
-    then 
-        echo "$SOURCE is not a prime number"
-        exit 1
-    else
-        echo "$SOURCE is prime"
-    fi
+  # If num is divisible by i, it's not prime
+  if (( num % i == 0 ))
+  then
+      echo "$num is not a prime number"
+      exit 1
+  else
+      echo "$num is a prime number"
+  fi
 done
+ 
