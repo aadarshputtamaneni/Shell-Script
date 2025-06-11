@@ -5,9 +5,10 @@ echo "Enter a number:"
 read num
 
 # Check if the number is less than or equal to 1
-if [ $num -le 1 ]; then
-  echo "$num is not a prime number"
-  exit
+if [ $num -le 1 ]
+ then
+     echo "$num is not a prime number"
+     exit 1
 fi
 
 # Loop from 2 to num-1
@@ -16,7 +17,7 @@ do
   # If num is divisible by i, it's not prime
   if (( num % i == 0 )); then
     echo "$num is not a prime number"
-    exit
+    exit 1
   fi
 done
 
