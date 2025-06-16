@@ -1,10 +1,22 @@
  #!/bin/bash
 
-echo "Enter numbers :"
-read input 
+# Ask for input
+echo "Enter numbers separated by spaces:"
+read -a numbers  # read input as an array
 
-if [[ -z "$input" ]]; then
-  echo "You didn't enter any numbers."
+# Check if user entered anything
+if [ ${#numbers[@]} -eq 0 ]; then
+  echo "❌ No numbers entered."
+  exit 1
+fi
+
+# Process and find duplicates
+duplicates=$(printf "%s\n" "${numbers[@]}" | sort | uniq -d)
+
+# Print result
+if [ -z "$duplicates" ]; then
+  echo "✅ No duplicates found."
 else
-  echo "$input" | sort | uniq -d
+  echo "🔁 Duplicate numbers are:"
+  echo "$duplicates"
 fi
