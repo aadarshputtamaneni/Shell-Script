@@ -17,6 +17,5 @@ duplicates=$(printf "%s\n" "${numbers[@]}" | sort | uniq -d)
 if [ -z "$duplicates" ]; then
   echo "✅ No duplicates found."
 else
-  echo "🔁 Duplicate numbers are:"
-  echo "$duplicates"
+  echo "🔁 Duplicate numbers are:$duplicates"
 fi
