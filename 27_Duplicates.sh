@@ -5,7 +5,7 @@ read Input
 
 Duplicates=$(echo "$Input" | sort | uniq -d)
 
-if [ -z $Duplicates ]
+if [[ -z "$Duplicates" ]]
 then 
     echo "No Duplicates Found"
     exit 1
