@@ -17,7 +17,6 @@ then
 else
     echo "$num is a prime number"
 fi
-
 done
 
  
