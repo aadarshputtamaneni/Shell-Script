@@ -1,14 +1,10 @@
-#!/bin/bash
+ #!/bin/bash
 
-echo "Enter Your Numbers:"
-read Input
+echo "Enter numbers :"
+read input 
 
-Duplicates=$(echo "$Input" | sort | uniq -d)
-
-if [[ -z "$Duplicates" ]]
-then 
-    echo "No Duplicates Found"
-    exit 1
-else 
-    echo "Duplicates number are:$Duplicates"
+if [[ -z "$input" ]]; then
+  echo "You didn't enter any numbers."
+else
+  echo "$input" | sort | uniq -d
 fi
